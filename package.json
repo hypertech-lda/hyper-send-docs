@@ -1,0 +1,20 @@
+{
+  "name": "HyperSend-docs",
+  "version": "0.0.1",
+  "description": "HyperSend Documentantion",
+  "main": "index.js",
+  "authors": {
+    "name": "Karson",
+    "email": "suporte@HyperSend.co.mz"
+  },
+  "repository": "/HyperSend-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src",
+    "deploy": "surge src/.vuepress/dist/ HyperSend.surge.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
