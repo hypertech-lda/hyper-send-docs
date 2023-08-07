@@ -53,9 +53,12 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'install',
-            'link',
-            'api',
+            // 'install',
+            'auth',
+            'contacts',
+            'groups',
+            'templates',
+            'message'
           ]
         }
       ],
