@@ -1,6 +1,6 @@
 # Introduction
 
-![HyperSend Logo](./assets/logo.png)
+![HyperSend Logo](/assets/logo.png)
 
 Welcome to the official documentation for HyperSend, your comprehensive guide to utilizing our powerful SMS messaging platform. Whether you're looking to send text messages, manage message templates, schedule messages, track delivery status, or integrate with our API, you've come to the right place.
 
