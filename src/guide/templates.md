@@ -1,7 +1,6 @@
-# Contacts through API
+# Templates through API
 
-The Contacts API provides functionality to manage customer contacts. You can perform various actions, such as listing all contacts or retrieving specific contact details. The API follows RESTful conventions and offers the following endpoints:
-
+The Templates API provides functionality to manage customer templates. You can perform various actions, such as listing all templates or retrieving specific template details. The API follows RESTful conventions and offers the following endpoints:
 
 ## Headers
 
@@ -44,12 +43,12 @@ The `data` property is only present in success responses. It contains the data t
 <br>
 <hr>
 
-## List all contacts
+## List all templates
 
-To list contacts, send GET request to following URL:
+To list templates, send GET request to following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts
+https://hypersend.co.mz/api/templates
 ```
 
 ## Request Body
@@ -87,18 +86,12 @@ Here are some examples of error and success responses:
 {
   "success": true,
   "data": {
-    "contacts": [
+    "templates": [
       {
         "id": 1,
-        "name": "My Contact",
-        "iso2": "",
-        "country_code": "MZ",
-        "email": "exemplo@email.com",
-        "country_name": "Mozambique (Moçambique)",
-        "dial_code": "258",
-        "formatted": "8x xxx xxx",
-        "number": "+2588xxxxxxx",
-        "national_number": "84xxxxxx",
+        "name": "Template name",
+        "header": "Template Header-container",
+        "footer": "Template Footer-container",
         "created_at": "2023-08-02T10:18:14.000000Z",
         "updated_at": "2023-08-02T10:18:14.000000Z"
       }
@@ -113,28 +106,22 @@ Here are some examples of error and success responses:
 {
   "success": true,
   "data": {
-    "contacts": {
+    "templates": {
       "current_page": 1,
       "data": [
         {
           "id": 1,
-          "name": "My Contact",
-          "iso2": "",
-          "country_code": "MZ",
-          "email": "exemplo@email.com",
-          "country_name": "Mozambique (Moçambique)",
-          "dial_code": "258",
-          "formatted": "8x xxx xxx",
-          "number": "+2588xxxxxxx",
-          "national_number": "84xxxxxx",
+          "name": "Template name",
+          "header": "Template Header-container",
+          "footer": "Template Footer-container",
           "created_at": "2023-08-02T10:18:14.000000Z",
           "updated_at": "2023-08-02T10:18:14.000000Z"
         }
       ],
-      "first_page_url": "https://hypersend.co.mz/api/contacts?page=1",
+      "first_page_url": "https://hypersend.co.mz/api/templates?page=1",
       "from": 1,
       "last_page": 10,
-      "last_page_url": "https://hypersend.co.mz/api/contacts?page=10",
+      "last_page_url": "https://hypersend.co.mz/api/templates?page=10",
       "links": [
         {
           "url": null,
@@ -142,63 +129,63 @@ Here are some examples of error and success responses:
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=1",
+          "url": "https://hypersend.co.mz/api/templates?page=1",
           "label": "1",
           "active": true
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=2",
+          "url": "https://hypersend.co.mz/api/templates?page=2",
           "label": "2",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=3",
+          "url": "https://hypersend.co.mz/api/templates?page=3",
           "label": "3",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=4",
+          "url": "https://hypersend.co.mz/api/templates?page=4",
           "label": "4",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=5",
+          "url": "https://hypersend.co.mz/api/templates?page=5",
           "label": "5",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=6",
+          "url": "https://hypersend.co.mz/api/templates?page=6",
           "label": "6",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=7",
+          "url": "https://hypersend.co.mz/api/templates?page=7",
           "label": "7",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=8",
+          "url": "https://hypersend.co.mz/api/templates?page=8",
           "label": "8",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=9",
+          "url": "https://hypersend.co.mz/api/templates?page=9",
           "label": "9",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=10",
+          "url": "https://hypersend.co.mz/api/templates?page=10",
           "label": "10",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=2",
+          "url": "https://hypersend.co.mz/api/templates?page=2",
           "label": "Próximo &raquo;",
           "active": false
         }
       ],
-      "next_page_url": "https://hypersend.co.mz/api/contacts?page=2",
-      "path": "https://hypersend.co.mz/api/contacts",
+      "next_page_url": "https://hypersend.co.mz/api/templates?page=2",
+      "path": "https://hypersend.co.mz/api/templates",
       "per_page": 1,
       "prev_page_url": null,
       "to": 1,
@@ -208,35 +195,29 @@ Here are some examples of error and success responses:
 }
 ```
 
-## Show Contact
+## Show Template
 
-To retrieve a specific contact, send a GET request to the following URL:
+To retrieve a specific template, send a GET request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/templates/{template_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to retrieve.
+Replace `{template_id}` with the actual ID of the template you want to retrieve.
 
 ### Response Structure
 
-Here is an example of a success response for showing a contact:
+Here is an example of a success response for showing a template:
 
 ```json
 {
   "success": true,
   "data": {
-    "contact": {
+    "template": {
       "id": 1,
-      "name": "My Contact",
-      "iso2": "",
-      "country_code": "MZ",
-      "email": "exemplo@email.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "8x xxx xxx",
-      "number": "+2588xxxxxxx",
-      "national_number": "84xxxxxx",
+      "name": "Template name",
+      "header": "Template Header-container",
+      "footer": "Template Footer-container",
       "created_at": "2023-08-02T10:18:14.000000Z",
       "updated_at": "2023-08-02T10:18:14.000000Z"
     }
@@ -244,52 +225,46 @@ Here is an example of a success response for showing a contact:
 }
 ```
 
-## Store Contact
+## Store Template
 
-To create a new contact, send a POST request to the following URL:
+To create a new template, send a POST request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts
+https://hypersend.co.mz/api/templates
 ```
 
 ### Request Body
 
-| Key   | Description                            | Required | Example            |
-| ----- | -------------------------------------- | -------- | ------------------ |
-| phone | Contact's phone number (starts with +) | Yes      | "+123456789"       |
-| name  | Contact's name                         | Yes      | "Jane Smith"       |
-| email | Contact's email                        | No       | "jane@example.com" |
+| Key    | Description       | Required | Example           |
+| ------ | ----------------- | -------- | ----------------- |
+| name   | Template's Name   | Yes      | "Template Name"   |
+| header | Template's Header | Yes      | "Template Header" |
+| footer | Template's Footer | Yes      | "Template Footer" |
 
 Example JSON object for the request body:
 
 ```json
 {
-  "phone": "+123456789",
-  "name": "Jane Smith",
-  "email": "jane@example.com"
+  "name": "Template Name",
+  "header": "Template Header",
+  "footer": "Template Footer"
 }
 ```
 
 ### Response Structure
 
-Here is an example of a success response after storing a contact:
+Here is an example of a success response after storing a template:
 
 ```json
 {
   "success": true,
-  "message": "Contact created successfully",
+  "message": "Template created successfully",
   "data": {
-    "contact": {
-      "id": 2,
-      "name": "Jane Smith",
-      "iso2": "",
-      "country_code": "USA",
-      "email": "jane@example.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "1 234 56 789",
-      "number": "+123456789",
-      "national_number": "123456789",
+    "template": {
+      "id": 1,
+      "name": "Template name",
+      "header": "Template Header-container",
+      "footer": "Template Footer-container",
       "created_at": "2023-08-02T10:18:14.000000Z",
       "updated_at": "2023-08-02T10:18:14.000000Z"
     }
@@ -297,55 +272,50 @@ Here is an example of a success response after storing a contact:
 }
 ```
 
-## Update Contact
+## Update Template
 
-To update an existing contact, send a PUT request to the following URL:
+To update an existing template, send a PUT request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/templates/{template_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to update.
+Replace `{template_id}` with the actual ID of the template you want to update.
 
 ### Request Body
 
 You can include any combination of the following fields in the request body:
 
-| Key   | Description                          | Required | Example               |
-| ----- | ------------------------------------ | -------- | --------------------- |
-| phone | Updated phone number (starts with +) | No       | "+987654321"          |
-| name  | Updated name                         | No       | "Updated Name"        |
-| email | Updated email                        | No       | "updated@example.com" |
+| Key    | Description    | Required | Example           |
+| ------ | -------------- | -------- | ----------------- |
+| name   | Updated Name   | No       | "Template Name"   |
+| header | Updated Header | No       | "Template Header" |
+| footer | Updated Footer | No       | "Template Footer" |
 
 Example JSON object for the request body:
 
 ```json
 {
-  "phone": "+987654321",
-  "name": "Updated Name"
+  "name": "Template Name",
+  "header": "Template Header",
+  "footer": "Template Footer"
 }
 ```
 
 ### Response Structure
 
-Here is an example of a success response after updating a contact:
+Here is an example of a success response after updating a template:
 
 ```json
 {
   "success": true,
-  "message": "Contact updated successfully",
+  "message": "Template updated successfully",
   "data": {
-    "contact": {
-      "id": 2,
-      "name": "Updated Name",
-      "iso2": "",
-      "country_code": "MZ",
-      "email": "jane@example.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "98 765 4321",
-      "number": "+987654321",
-      "national_number": "987654321",
+    "template": {
+      "id": 1,
+      "name": "Template name",
+      "header": "Template Header-container",
+      "footer": "Template Footer-container",
       "created_at": "2023-08-02T10:18:14.000000Z",
       "updated_at": "2023-08-02T10:18:14.000000Z"
     }
@@ -353,24 +323,23 @@ Here is an example of a success response after updating a contact:
 }
 ```
 
-## Delete Contact
+## Delete Template
 
-To delete a contact, send a DELETE request to the following URL:
+To delete a template, send a DELETE request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/templates/{template_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to delete.
+Replace `{template_id}` with the actual ID of the template you want to delete.
 
 ### Response Structure
 
-Here is an example of a success response after deleting a contact:
+Here is an example of a success response after deleting a template:
 
 ```json
 {
   "success": true,
-  "message": "Contact deleted successfully"
-}
+  "message": "Template deleted successfully"
 }
 ```

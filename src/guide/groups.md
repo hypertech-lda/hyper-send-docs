@@ -1,6 +1,6 @@
 # Groups through API
 
-The Contacts API provides functionality to manage customer contacts. You can perform various actions, such as listing all contacts or retrieving specific contact details. The API follows RESTful conventions and offers the following endpoints:
+The Group API provides functionality to manage customer groups. You can perform various actions, such as listing all groups or retrieving specific group details. The API follows RESTful conventions and offers the following endpoints:
 
 ## Headers
 
@@ -43,12 +43,12 @@ The `data` property is only present in success responses. It contains the data t
 <br>
 <hr>
 
-## List all contacts
+## List all groups
 
-To list contacts, send GET request to following URL:
+To list groups, send GET request to following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts
+https://hypersend.co.mz/api/groups
 ```
 
 ## Request Body
@@ -86,20 +86,13 @@ Here are some examples of error and success responses:
 {
   "success": true,
   "data": {
-    "contacts": [
+    "groups": [
       {
         "id": 1,
-        "name": "My Contact",
-        "iso2": "",
-        "country_code": "MZ",
-        "email": "exemplo@email.com",
-        "country_name": "Mozambique (Moçambique)",
-        "dial_code": "258",
-        "formatted": "8x xxx xxx",
-        "number": "+2588xxxxxxx",
-        "national_number": "84xxxxxx",
-        "created_at": "2023-08-02T10:18:14.000000Z",
-        "updated_at": "2023-08-02T10:18:14.000000Z"
+        "name": "My Group",
+        "description": "My Description.",
+        "created_at": "2023-08-04T08:20:01.000000Z",
+        "updated_at": "2023-08-04T08:20:01.000000Z"
       }
     ]
   }
@@ -112,28 +105,21 @@ Here are some examples of error and success responses:
 {
   "success": true,
   "data": {
-    "contacts": {
+    "groups": {
       "current_page": 1,
       "data": [
         {
           "id": 1,
-          "name": "My Contact",
-          "iso2": "",
-          "country_code": "MZ",
-          "email": "exemplo@email.com",
-          "country_name": "Mozambique (Moçambique)",
-          "dial_code": "258",
-          "formatted": "8x xxx xxx",
-          "number": "+2588xxxxxxx",
-          "national_number": "84xxxxxx",
-          "created_at": "2023-08-02T10:18:14.000000Z",
-          "updated_at": "2023-08-02T10:18:14.000000Z"
+          "name": "My Group",
+          "description": "My Description.",
+          "created_at": "2023-08-04T08:20:01.000000Z",
+          "updated_at": "2023-08-04T08:20:01.000000Z"
         }
       ],
-      "first_page_url": "https://hypersend.co.mz/api/contacts?page=1",
+      "first_page_url": "https://hypersend.co.mz/api/groups?page=1",
       "from": 1,
       "last_page": 10,
-      "last_page_url": "https://hypersend.co.mz/api/contacts?page=10",
+      "last_page_url": "https://hypersend.co.mz/api/groups?page=10",
       "links": [
         {
           "url": null,
@@ -141,63 +127,63 @@ Here are some examples of error and success responses:
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=1",
+          "url": "https://hypersend.co.mz/api/groups?page=1",
           "label": "1",
           "active": true
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=2",
+          "url": "https://hypersend.co.mz/api/groups?page=2",
           "label": "2",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=3",
+          "url": "https://hypersend.co.mz/api/groups?page=3",
           "label": "3",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=4",
+          "url": "https://hypersend.co.mz/api/groups?page=4",
           "label": "4",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=5",
+          "url": "https://hypersend.co.mz/api/groups?page=5",
           "label": "5",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=6",
+          "url": "https://hypersend.co.mz/api/groups?page=6",
           "label": "6",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=7",
+          "url": "https://hypersend.co.mz/api/groups?page=7",
           "label": "7",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=8",
+          "url": "https://hypersend.co.mz/api/groups?page=8",
           "label": "8",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=9",
+          "url": "https://hypersend.co.mz/api/groups?page=9",
           "label": "9",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=10",
+          "url": "https://hypersend.co.mz/api/groups?page=10",
           "label": "10",
           "active": false
         },
         {
-          "url": "https://hypersend.co.mz/api/contacts?page=2",
+          "url": "https://hypersend.co.mz/api/groups?page=2",
           "label": "Próximo &raquo;",
           "active": false
         }
       ],
-      "next_page_url": "https://hypersend.co.mz/api/contacts?page=2",
-      "path": "https://hypersend.co.mz/api/contacts",
+      "next_page_url": "https://hypersend.co.mz/api/groups?page=2",
+      "path": "https://hypersend.co.mz/api/groups",
       "per_page": 1,
       "prev_page_url": null,
       "to": 1,
@@ -209,35 +195,27 @@ Here are some examples of error and success responses:
 
 ## Show Contact
 
-To retrieve a specific contact, send a GET request to the following URL:
+To retrieve a specific group, send a GET request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/groups/{group_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to retrieve.
+Replace `{group_id}` with the actual ID of the group you want to retrieve.
 
 ### Response Structure
 
-Here is an example of a success response for showing a contact:
+Here is an example of a success response for showing a group:
 
 ```json
 {
   "success": true,
   "data": {
-    "contact": {
-      "id": 1,
-      "name": "My Contact",
-      "iso2": "",
-      "country_code": "MZ",
-      "email": "exemplo@email.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "8x xxx xxx",
-      "number": "+2588xxxxxxx",
-      "national_number": "84xxxxxx",
-      "created_at": "2023-08-02T10:18:14.000000Z",
-      "updated_at": "2023-08-02T10:18:14.000000Z"
+    "group": {
+      "name": "My Group",
+      "description": "My Description.",
+      "created_at": "2023-08-04T08:20:01.000000Z",
+      "updated_at": "2023-08-04T08:20:01.000000Z"
     }
   }
 }
@@ -245,52 +223,42 @@ Here is an example of a success response for showing a contact:
 
 ## Store Contact
 
-To create a new contact, send a POST request to the following URL:
+To create a new group, send a POST request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts
+https://hypersend.co.mz/api/groups
 ```
 
 ### Request Body
 
-| Key   | Description                            | Required | Example            |
-| ----- | -------------------------------------- | -------- | ------------------ |
-| phone | Contact's phone number (starts with +) | Yes      | "+123456789"       |
-| name  | Contact's name                         | Yes      | "Jane Smith"       |
-| email | Contact's email                        | No       | "jane@example.com" |
+| Key         | Description         | Required | Example          |
+| ----------- | ------------------- | -------- | ---------------- |
+| name        | Group's name        | Yes      | "Jane Smith"     |
+| description | Group's description | No       | "My Description" |
 
 Example JSON object for the request body:
 
 ```json
 {
-  "phone": "+123456789",
-  "name": "Jane Smith",
-  "email": "jane@example.com"
+  "name": "My Group",
+  "description": "My Description."
 }
 ```
 
 ### Response Structure
 
-Here is an example of a success response after storing a contact:
+Here is an example of a success response after storing a group:
 
 ```json
 {
   "success": true,
   "message": "Contact created successfully",
   "data": {
-    "contact": {
-      "id": 2,
-      "name": "Jane Smith",
-      "iso2": "",
-      "country_code": "USA",
-      "email": "jane@example.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "1 234 56 789",
-      "number": "+123456789",
-      "national_number": "123456789",
-      "created_at": "2023-08-02T10:18:14.000000Z",
-      "updated_at": "2023-08-02T10:18:14.000000Z"
+    "group": {
+      "name": "My Group",
+      "description": "My Description.",
+      "created_at": "2023-08-04T08:20:01.000000Z",
+      "updated_at": "2023-08-04T08:20:01.000000Z"
     }
   }
 }
@@ -298,55 +266,46 @@ Here is an example of a success response after storing a contact:
 
 ## Update Contact
 
-To update an existing contact, send a PUT request to the following URL:
+To update an existing group, send a PUT request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/groups/{group_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to update.
+Replace `{group_id}` with the actual ID of the group you want to update.
 
 ### Request Body
 
 You can include any combination of the following fields in the request body:
 
-| Key   | Description                          | Required | Example               |
-| ----- | ------------------------------------ | -------- | --------------------- |
-| phone | Updated phone number (starts with +) | No       | "+987654321"          |
-| name  | Updated name                         | No       | "Updated Name"        |
-| email | Updated email                        | No       | "updated@example.com" |
+| Key         | Description         | Required | Example          |
+| ----------- | ------------------- | -------- | ---------------- |
+| name        | Group's name        | no       | "Jane Smith"     |
+| description | Group's Description | no       | "My Description" |
 
 Example JSON object for the request body:
 
 ```json
 {
-  "phone": "+987654321",
-  "name": "Updated Name"
+  "name": "My Group",
+  "description": "My Description."
 }
 ```
 
 ### Response Structure
 
-Here is an example of a success response after updating a contact:
+Here is an example of a success response after updating a group:
 
 ```json
 {
   "success": true,
   "message": "Contact updated successfully",
   "data": {
-    "contact": {
-      "id": 2,
-      "name": "Updated Name",
-      "iso2": "",
-      "country_code": "MZ",
-      "email": "jane@example.com",
-      "country_name": "Mozambique (Moçambique)",
-      "dial_code": "258",
-      "formatted": "98 765 4321",
-      "number": "+987654321",
-      "national_number": "987654321",
-      "created_at": "2023-08-02T10:18:14.000000Z",
-      "updated_at": "2023-08-02T10:18:14.000000Z"
+    "group": {
+      "name": "My Group",
+      "description": "My Description.",
+      "created_at": "2023-08-04T08:20:01.000000Z",
+      "updated_at": "2023-08-04T08:20:01.000000Z"
     }
   }
 }
@@ -354,22 +313,21 @@ Here is an example of a success response after updating a contact:
 
 ## Delete Contact
 
-To delete a contact, send a DELETE request to the following URL:
+To delete a group, send a DELETE request to the following URL:
 
 ```txt
-https://hypersend.co.mz/api/contacts/{contact_id}
+https://hypersend.co.mz/api/groups/{group_id}
 ```
 
-Replace `{contact_id}` with the actual ID of the contact you want to delete.
+Replace `{group_id}` with the actual ID of the group you want to delete.
 
 ### Response Structure
 
-Here is an example of a success response after deleting a contact:
+Here is an example of a success response after deleting a group:
 
 ```json
 {
   "success": true,
   "message": "Contact deleted successfully"
-}
 }
 ```

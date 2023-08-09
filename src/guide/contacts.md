@@ -372,5 +372,4 @@ Here is an example of a success response after deleting a contact:
   "success": true,
   "message": "Contact deleted successfully"
 }
-}
 ```
